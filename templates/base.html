@@ -90,7 +90,7 @@
         </li>
         <li class="profile">
           <div class="profile-details">
-            <img src="{% static 'image/profile.jpg' %}" alt="profileImg" />
+            <img src="{{ request.user.profile.profile_image.url }}" alt="profileImg" />
             <div class="name_job">
               <div class="name">{{ user }}</div>
             </div>

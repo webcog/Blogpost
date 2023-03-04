@@ -21,7 +21,7 @@
           <h6 class="card-text mt-1"><b>Author:- </b><span>{{ post.created_by }}</span></h6>        
           <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary p-2 my-3 ">Read More</a>
           {% if post.created_by == request.user %}
-          <a href="{% url 'post_detail' post.slug %}" class="btn btn-warning p-2 my-3 ">Update Post</a>
+          <a href="{% url 'update_post' post.slug %}" class="btn btn-warning p-2 my-3 ">Update Post</a>
           <a href="{% url 'post_delete' post.slug %}" class="btn btn-danger p-2 my-3 ">Delete Post</a>
           {% endif %}
           <hr>

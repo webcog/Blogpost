@@ -11,6 +11,7 @@ urlpatterns = [
     path('accounts/setting/<int:id>', views.setting, name='setting'),
     path("user/<int:id>", views.user, name="user"),
     path('upload/post', views.upload_post, name='upload_post'),
+    path('update/post/<str:slug>', views.update_post, name='update_post'),
     path("cat/delete/<str:slug>", views.cat_post_delete, name="cat_delete"),
     path("post/delete/<str:slug>", views.post_delete, name="post_delete"),
     path("user/delete/<str:slug>", views.user_post_delete, name="user_post_delete"),

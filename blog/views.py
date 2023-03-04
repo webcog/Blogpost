@@ -167,6 +167,17 @@ def post_delete(request, slug):
     posts.delete()
     return redirect(post)
 
+def update_post(request, slug):
+    user = request.user
+    post = Post.objects.get(slug=slug)
+    form = User_Post(request.POST or None, instance=post)
+    if form.is_valid():
+        mypost = form.save(commit=False)
+        mypost.created_by = user
+        mypost.save()
+        return redirect('post_detail', post.slug)
+    return render(request, 'upload_post.html', {'form': form, 'post':post,})
+
 def user_post_delete(request,id, slug):
     posts = Post.objects.get(slug=slug)
     posts.delete()
