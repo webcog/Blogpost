@@ -14,6 +14,7 @@ urlpatterns = [
     path("cat/delete/<str:slug>", views.cat_post_delete, name="cat_delete"),
     path("post/delete/<str:slug>", views.post_delete, name="post_delete"),
     path("user/delete/<str:slug>", views.user_post_delete, name="user_post_delete"),
+    path("search", views.search , name="search"),
     
     path('accounts/login/', auth_views.LoginView.as_view(template_name = 'login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),

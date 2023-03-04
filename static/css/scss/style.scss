@@ -161,6 +161,21 @@
 			color: #11101d !important;
 		}
 	}
+	.search{
+		background-color: transparent;
+		color: white;
+		border: 2px solid transparent;
+		padding:10px 0 10px 0;
+		&:hover{
+			border: 2px solid white;
+			padding: 30px;
+			border-radius: 5px;
+			background-color: #fff;
+			color: #000;
+			
+
+		}
+	}
 	li.profile {
 		position: fixed !important;
 		height: 60px !important;

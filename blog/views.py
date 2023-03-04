@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.utils.text import slugify
 import math
 from django.http import HttpResponse
+from django.db.models import Q 
+
 
 
 # Create your views here.
@@ -169,6 +171,14 @@ def user_post_delete(request,id, slug):
     posts = Post.objects.get(slug=slug)
     posts.delete()
     return redirect(post)
+
+def search(request):
+    query = request.GET.get('search')
+    if query.lower():
+        posts = Post.objects.filter(Q(title__contains=query) | Q(content__contains= query))
+    else:
+        posts = None
+    return render(request, 'search.html', {'posts': posts, 'query': query})
 
 def test(request):
     x = input(">> ")

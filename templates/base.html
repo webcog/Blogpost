@@ -26,11 +26,15 @@
         <i class="bx bx-menu" id="btn"></i>
       </div>
       <ul class="nav-list">
-      <form method="get">
+      <form method="get" action="{% url 'search' %}">
         <li>
           <i class="bx bx-search"></i>
-          <input type="text" placeholder="Search..." />
+          <input type="text" name="search" placeholder="Search..." />
           <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <button type="submit" class="search" >Search</button>
+          <span class="tooltip"><i class="bx bx-search"></i></span>
         </li>
       </form>
         {% if user.is_superuser %}
